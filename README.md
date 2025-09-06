@@ -12,4 +12,4 @@ This is a full-stack project for browsing restaurant menus and viewing locations
 Clone the repo and run:
 
 ```bash
-docker-compose up --build
+./start.sh
