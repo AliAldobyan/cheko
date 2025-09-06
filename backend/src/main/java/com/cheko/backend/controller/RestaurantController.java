@@ -1,7 +1,7 @@
 package com.cheko.backend.controller;
 
 import com.cheko.backend.model.Restaurant;
-import com.cheko.backend.repository.RestaurantRepository;
+import com.cheko.backend.service.RestaurantService;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
@@ -10,14 +10,19 @@ import java.util.List;
 @RequestMapping("/restaurants")
 public class RestaurantController {
 
-    private final RestaurantRepository repository;
+    private final RestaurantService service;
 
-    public RestaurantController(RestaurantRepository repository) {
-        this.repository = repository;
+    public RestaurantController(RestaurantService service) {
+        this.service = service;
     }
 
     @GetMapping
     public List<Restaurant> getAll() {
-        return repository.findAll();
+        return service.getAll();
+    }
+
+    @PostMapping
+    public Restaurant create(@RequestBody Restaurant restaurant) {
+        return service.create(restaurant);
     }
 }

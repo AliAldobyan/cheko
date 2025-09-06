@@ -1,7 +1,7 @@
 package com.cheko.backend.controller;
 
 import com.cheko.backend.model.MenuItem;
-import com.cheko.backend.repository.MenuItemRepository;
+import com.cheko.backend.service.MenuItemService;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
@@ -10,19 +10,24 @@ import java.util.List;
 @RequestMapping("/menu-items")
 public class MenuItemController {
 
-    private final MenuItemRepository repository;
+    private final MenuItemService service;
 
-    public MenuItemController(MenuItemRepository repository) {
-        this.repository = repository;
+    public MenuItemController(MenuItemService service) {
+        this.service = service;
     }
 
     @GetMapping
     public List<MenuItem> getAll() {
-        return repository.findAll();
+        return service.getAll();
     }
 
     @PostMapping
     public MenuItem create(@RequestBody MenuItem item) {
-        return repository.save(item);
+        return service.create(item);
+    }
+
+    @GetMapping("/second-highest")
+    public List<MenuItem> getSecondHighestPerCategory() {
+        return service.getSecondHighestPerCategory();
     }
 }
