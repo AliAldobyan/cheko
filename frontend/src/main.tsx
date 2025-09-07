@@ -6,7 +6,7 @@ import { BrowserRouter, Routes, Route } from "react-router-dom";
 import { CssBaseline, ThemeProvider, createTheme } from "@mui/material";
 import App from "./App";
 import Home from "./pages/Home";
-import Map from "./pages/MapPage/Map";
+import Map from "./pages/MapPage";
 
 const theme = createTheme({
   palette: {
