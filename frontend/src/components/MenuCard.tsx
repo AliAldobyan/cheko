@@ -30,7 +30,7 @@ export default function MenuCard({
   return (
     <Card
       sx={{
-        borderRadius: 3,
+        borderRadius: "8px",
         boxShadow: 3,
         p: 2,
         display: "flex",
@@ -49,7 +49,7 @@ export default function MenuCard({
           sx={{
             width: { xs: "100%", sm: 140 },
             height: { xs: 180, sm: 140 },
-            borderRadius: 2,
+            borderRadius: "16px",
             objectFit: "cover",
           }}
         />
@@ -62,7 +62,7 @@ export default function MenuCard({
               bgcolor: "#D0EAE3",
               px: 1.5,
               py: 0.5,
-              borderRadius: "8px",
+              borderRadius: "5px",
               fontSize: "0.8rem",
               fontWeight: 600,
               color: "#599887",

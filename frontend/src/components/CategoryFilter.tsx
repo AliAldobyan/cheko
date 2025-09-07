@@ -31,14 +31,14 @@ export default function CategoryFilter({
           <>
             <Box
               key={f.type}
-              onClick={() => onFilterChange(isActive ? null : f.type)}
+              onClick={() => onFilterChange(f.type)}
               sx={{
                 display: "flex",
                 alignItems: "center",
                 gap: 1.5,
                 px: 2.5,
                 py: 1.5,
-                borderRadius: "8px",
+                borderRadius: "10px",
                 bgcolor: isActive ? f.color : "white",
                 boxShadow: isActive ? 2 : 0,
                 cursor: "pointer",
@@ -51,7 +51,7 @@ export default function CategoryFilter({
               <Box
                 sx={{
                   p: 1,
-                  borderRadius: "8px",
+                  borderRadius: "15px",
                   bgcolor: isActive ? "white" : f.color,
                   display: "flex",
                   alignItems: "center",
